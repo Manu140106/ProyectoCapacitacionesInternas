@@ -4,6 +4,7 @@ import com.example.plataforma_capacitacion.model.Certificado;
 import com.example.plataforma_capacitacion.repository.CertificadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -20,11 +21,15 @@ public class CertificadoService {
         return certificadoRepository.save(certificado);
     }
 
-    public Certificado obtenerCertificadoPorId(Long id) {
+    public Certificado obtenerPorId(Long id) {
         return certificadoRepository.findById(id).orElse(null);
     }
 
     public void eliminarCertificado(Long id) {
         certificadoRepository.deleteById(id);
+    }
+
+    public List<Certificado> listarPorUsuario(Long usuarioId) {
+        return certificadoRepository.findByUsuarioId(usuarioId);
     }
 }
