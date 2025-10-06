@@ -4,7 +4,6 @@ import com.example.plataforma_capacitacion.model.Badge;
 import com.example.plataforma_capacitacion.repository.BadgeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -28,7 +27,6 @@ public class BadgeService {
     public void eliminarBadge(Long id) {
         badgeRepository.deleteById(id);
     }
-
     public List<Badge> listarPorUsuario(Long usuarioId) {
         return badgeRepository.findByUsuarioId(usuarioId);
     }
