@@ -1,0 +1,2 @@
+-- No data to initialize. This file intentionally contains only a SQL comment
+-- to avoid Spring attempting to execute an empty script during test startup.
