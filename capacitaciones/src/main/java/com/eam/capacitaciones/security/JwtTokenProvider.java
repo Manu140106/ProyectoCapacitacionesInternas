@@ -114,7 +114,7 @@ public class JwtTokenProvider {
                     .build()
                     .parseClaimsJws(token)
                     .getBody();
-            
+
             return claims.getExpiration().before(new Date());
         } catch (ExpiredJwtException ex) {
             return true;
